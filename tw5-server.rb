@@ -6,6 +6,9 @@
 # From the command line (e.g. Terminal on Mac):
 # /usr/bin/ruby tw5-server.rb /folder
 #
+# ALSO
+# suggest running this with a local firewall to prevent external connections.
+#
 # Originally from:
 # https://github.com/brianemery/tw5_server/blob/main/tw5-server.rb
 
