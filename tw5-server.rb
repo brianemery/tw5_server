@@ -6,6 +6,8 @@
 # From the command line (e.g. Terminal on Mac):
 # /usr/bin/ruby tw5-server.rb /folder
 #
+# Originally from:
+# https://github.com/brianemery/tw5_server/blob/main/tw5-server.rb
 
 require 'webrick'
 require 'fileutils'
