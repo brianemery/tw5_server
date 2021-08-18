@@ -10,7 +10,7 @@
 # suggest running this with a local firewall to prevent external connections.
 #
 # Originally from:
-# https://github.com/brianemery/tw5_server/blob/main/tw5-server.rb
+# https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da
 
 require 'webrick'
 require 'fileutils'
