@@ -20,7 +20,7 @@ If you want to host multiple TiddlyWikis, you can serve the whole subfolder, and
 `/usr/bin/ruby tw5-server.rb folder`
 
 ## Securing your site
-Suggest running this with a local firewall and/or proxy to secure external connections. The following is a working (but unprotected) proxy configuration for NGINX:
+Suggest running this with a local firewall and/or proxy to secure external connections. The following is a working proxy configuration for NGINX with optional password protection:
 
 ```nginx
 upstream tiddlywiki.example.com {
@@ -32,8 +32,16 @@ server {
         client_max_body_size 20M;
 
         location / {
+                #uncomment these lines to enable password protection after you have set up your user and password
+                #as per https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/
+                #
+                #auth_basic "Restricted";
+                #auth_basic_user_file /etc/nginx/htpasswd;
+
                 proxy_pass http://127.0.0.1:8000;
                 proxy_set_header Host $host;
+                proxy_set_header     X-Real-IP       $remote_addr;
+                proxy_set_header     X-Forwarded-For $proxy_add_x_forwarded_for;
         }
 }
 ```
