@@ -1,5 +1,4 @@
 # TW5 SERVER
-#
 # Allows editing and saving of TiddlyWiki in a browser.
 #
 # USAGE
@@ -8,13 +7,11 @@
 #
 # From the command line (e.g. Terminal on Mac):
 # /usr/bin/wget https://tiddlywiki.com/empty.html -P folder/
-# /usr/bin/ruby tw5-server.rb /folder/empty.html
-#
-# ALSO
-# Suggest running this with a local firewall and/or proxy to prevent external connections.
+# /usr/bin/ruby tw5-server.rb folder/empty.html
 #
 # Originally from:
 # https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da
+# https://github.com/brianemery/tw5_server
 
 require 'webrick'
 require 'fileutils'
