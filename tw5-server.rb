@@ -1,6 +1,6 @@
 # TW5 SERVER
 #
-# Allows editing and saving of TiddlyWiki in a browser
+# Allows editing and saving of TiddlyWiki in a browser.
 #
 # USAGE
 # Download TiddlyWiki from https://tiddlywiki.com/empty.html and
@@ -11,7 +11,7 @@
 # /usr/bin/ruby tw5-server.rb /folder/empty.html
 #
 # ALSO
-# suggest running this with a local firewall to prevent external connections.
+# Suggest running this with a local firewall and/or proxy to prevent external connections.
 #
 # Originally from:
 # https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da
