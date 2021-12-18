@@ -1,12 +1,10 @@
-## TW5 SERVER
-Originally from:
-https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da
+# TW5 SERVER
+Originally from https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da by Jim Foltz.
 
 Allows editing and saving of [TiddlyWiki](https://tiddlywiki.com) in a browser.
 
-### USAGE
-Download TiddlyWiki from https://tiddlywiki.com/empty.html and
-save it in a subfolder of this script but NOT as index.html.
+## Installing / Getting started
+Download TiddlyWiki from https://tiddlywiki.com/empty.html and save it in a subfolder of this script but NOT as index.html.
 
 From the command line (e.g. Terminal on Mac):
 
@@ -18,7 +16,7 @@ If you want to host multiple TiddlyWikis, you can serve the whole subfolder, and
 
 `/usr/bin/ruby tw5-server.rb folder`
 
-### ALSO
+## Securing your site
 Suggest running this with a local firewall and/or proxy to prevent external connections. The following is a working (but unprotected) proxy configuration for NGINX:
 
 ```nginx
@@ -37,7 +35,7 @@ server {
 }
 ```
 
-### MODIFICATIONS
+## Modifications to the original script
 * Added a bind address in the server definition:
   ```server = WEBrick::HTTPServer.new({:Port => 8000, :DocumentRoot => root, :BindAddress => "127.0.0.1"})```
 
