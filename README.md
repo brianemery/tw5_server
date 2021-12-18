@@ -1,7 +1,6 @@
 # TW5 SERVER
-Originally from https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da by Jim Foltz.
 
-Allows editing and saving of [TiddlyWiki](https://tiddlywiki.com) in a browser.
+Allows editing and saving of [TiddlyWiki](https://tiddlywiki.com) in a browser. Originally from https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da by Jim Foltz.
 
 ## Installing / Getting started
 Download TiddlyWiki from https://tiddlywiki.com/empty.html and save it in a subfolder of this script but NOT as index.html.
