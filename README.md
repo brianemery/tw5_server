@@ -3,11 +3,15 @@
 Allows editing and saving of [TiddlyWiki](https://tiddlywiki.com) in a browser. Originally from https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da by Jim Foltz.
 
 ## Installing / Getting started
-Download TiddlyWiki from https://tiddlywiki.com/empty.html and save it in a subfolder of this script but NOT as index.html.
-
-From the command line (e.g. Terminal on Mac):
+First, download TiddlyWiki from https://tiddlywiki.com/empty.html and save it in a subfolder of this script but NOT as index.html. You can do this from the command line (e.g. Terminal on Mac) like so:
 
 `/usr/bin/wget https://tiddlywiki.com/empty.html -P folder/`
+
+If wget is unavailable, you can also use curl:
+
+`curl https://tiddlywiki.com/empty.html >> folder/empty.html`
+
+Then, to start the server, run the following:
 
 `/usr/bin/ruby tw5-server.rb folder/empty.html`
 
@@ -16,7 +20,7 @@ If you want to host multiple TiddlyWikis, you can serve the whole subfolder, and
 `/usr/bin/ruby tw5-server.rb folder`
 
 ## Securing your site
-Suggest running this with a local firewall and/or proxy to prevent external connections. The following is a working (but unprotected) proxy configuration for NGINX:
+Suggest running this with a local firewall and/or proxy to secure external connections. The following is a working (but unprotected) proxy configuration for NGINX:
 
 ```nginx
 upstream tiddlywiki.example.com {
