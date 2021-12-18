@@ -15,8 +15,27 @@ If you want to host multiple TiddlyWikis, you can serve the whole subfolder, and
 
 `ruby tw5-server.rb folder`
 
-## Securing your site
-Suggest running this with a local firewall and/or proxy to secure external connections. The following is a working proxy configuration for NGINX with optional password protection:
+### Example systemd service
+
+You can automate your TiddlyWiki server with a systemd service:
+
+```
+[Unit]
+Description=TiddlyWiki
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/$USER/twiki
+ExecStart=/usr/bin/ruby tw5-server.rb folder/empty.html
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+## Serving and securing your site
+We suggest running this with a local firewall and/or proxy to secure external connections. The following is a working proxy configuration for NGINX with optional password protection:
 
 ```nginx
 upstream tiddlywiki.example.com {
@@ -52,6 +71,6 @@ server {
 
   Brian Emery, August 2021
 
-* Fixed a trailing slash bug when serving a single TW file directly, expanded on the instructions, and added an example NGINX proxy configuration block.
+* Fixed a trailing slash bug when serving a single TW file directly, expanded on the instructions, and added an example NGINX proxy configuration and a systemd service.
   
   Stanimir Djevelekov, December 2021
