@@ -1,6 +1,6 @@
 # TW5 SERVER
 
-Allows editing and saving of [TiddlyWiki](https://tiddlywiki.com) in a browser. Originally from https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da by Jim Foltz.
+A minimal web server in Ruby that allows editing and saving of [TiddlyWiki](https://tiddlywiki.com) in a browser. Based on https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da by [Jim Foltz](https://gist.github.com/jimfoltz).
 
 ## Installing / Getting started
 First, download TiddlyWiki from https://tiddlywiki.com/empty.html and save it in a subfolder of this script but NOT as index.html. You can do this from the command line (e.g. Terminal on Mac) like so:
@@ -61,16 +61,11 @@ server {
 }
 ```
 
-## Modifications to the original script
-* Added a bind address in the server definition:
-  ```server = WEBrick::HTTPServer.new({:Port => 8000, :DocumentRoot => root, :BindAddress => "127.0.0.1"})```
-
-  This will prevent webbrick from accepting connections from remote hosts (a portscan with nmap 
-  suggests this is true), and exposing your file system to the internet. I also suggest running 
-  this with a local firewall to prevent external connections.
-
-  Brian Emery, August 2021
-
-* Fixed a trailing slash bug when serving a single TW file directly, expanded on the instructions, and added an example NGINX proxy configuration and a systemd service.
-  
-  Stanimir Djevelekov, December 2021
+## Contributors
+### [Jim Foltz](https://gist.github.com/jimfoltz)
+- Original author
+### [Brian Emery](https://github.com/brianemery)
+- Added a bind address in the server definition - this will prevent the WEBrick server from accepting connections from remote hosts, and exposing your file system to the internet.
+### [Prehistoric Dog](https://github.com/korikori)
+- Fixed a trailing slash bug when serving a single TW file directly instead of a directory.
+- Expanded and reformatted the instructions, adding example code for a systemd service and an example NGINX reverse proxy configuration.
