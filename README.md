@@ -28,7 +28,7 @@ After=network.target
 Type=simple
 WorkingDirectory=/home/$USER/twiki
 ExecStart=/usr/bin/ruby tw5-server.rb folder/empty.html
-Restart=on-failure
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
