@@ -17,7 +17,7 @@ If you want to host multiple TiddlyWikis, you can serve the whole subfolder, and
 
 ### Example systemd service
 
-You can automate your TiddlyWiki server with a systemd service:
+On Linux, you can automate your TiddlyWiki server with a systemd service:
 
 ```
 [Unit]
