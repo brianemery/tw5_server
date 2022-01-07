@@ -1,16 +1,17 @@
 # TW5 SERVER
-#
-# Allows editing and saving of tiddlywiki in a browser
+# Allows editing and saving of TiddlyWiki in a browser.
 #
 # USAGE
-# From the command line (e.g. Terminal on Mac):
-# /usr/bin/ruby tw5-server.rb /folder
+# Download TiddlyWiki from https://tiddlywiki.com/empty.html and
+# save it in its own subfolder as an .html file but NOT index.html.
 #
-# ALSO
-# suggest running this with a local firewall to prevent external connections.
+# From the command line (e.g. Terminal on Mac):
+# /usr/bin/wget https://tiddlywiki.com/empty.html -P folder/
+# /usr/bin/ruby tw5-server.rb folder/empty.html
 #
 # Originally from:
 # https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da
+# https://github.com/brianemery/tw5_server
 
 require 'webrick'
 require 'fileutils'
@@ -31,7 +32,7 @@ module WEBrick
 
       class DefaultFileHandler
          def do_PUT(req, res)
-            file = "#{@config[:DocumentRoot]}#{req.path}"
+            file = "#{@config[:DocumentRoot]}#{req.path}".sub(/[\/]$/,'')
             res.body = ''
             unless Dir.exists? BACKUP_DIR
                Dir.mkdir BACKUP_DIR
